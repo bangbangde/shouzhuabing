@@ -1,0 +1,29 @@
+{
+  "name": "shouzhuabing",
+  "version": "1.0.0",
+  "description": "手抓饼点单",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bangbangde/shouzhuabing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bangbangde/shouzhuabing/issues"
+  },
+  "homepage": "https://github.com/bangbangde/shouzhuabing#readme",
+  "workspaces": [
+    "packages/service",
+    "packages/ui"
+  ],
+  "devDependencies": {
+    "rollup": "^3.12.1",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.1"
+  }
+}
