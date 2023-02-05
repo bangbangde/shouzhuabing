@@ -2,6 +2,7 @@ import Koa from 'koa';
 import koaBody from 'koa-body';
 import session from 'koa-session';
 import controller from './controller';
+import { AppDataSource } from "./data-source"
 
 const app = new Koa();
 
@@ -25,4 +26,9 @@ app.use(async (ctx, next) => {
 
 controller(app);
 
-app.listen(3000);
+
+AppDataSource.initialize().then(async () => {
+  console.log('AppDataSource initialized');
+  app.context.db = AppDataSource;
+  app.listen(3000);
+}).catch(error => console.log(error))
