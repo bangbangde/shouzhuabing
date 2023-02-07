@@ -31,4 +31,4 @@ AppDataSource.initialize().then(async () => {
   console.log('AppDataSource initialized');
   app.context.db = AppDataSource;
   app.listen(3000);
-}).catch(error => console.log(error))
+}).catch((error: Error) => console.log(error))

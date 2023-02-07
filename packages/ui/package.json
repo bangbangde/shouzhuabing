@@ -1,24 +1,19 @@
 {
   "name": "ui",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.0",
+  "license": "MIT",
+  "main": "./index.tsx",
+  "types": "./index.tsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "TIMING=1 eslint \"**/*.ts*\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bangbangde/shouzhuabing.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/bangbangde/shouzhuabing/issues"
-  },
-  "homepage": "https://github.com/bangbangde/shouzhuabing#readme",
-  "dependencies": {
-    "dotenv": "^16.0.3",
-    "service": "^1.0.0"
+  "devDependencies": {
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "*",
+    "react": "^17.0.2",
+    "tsconfig": "*",
+    "typescript": "^4.5.2"
   }
 }
