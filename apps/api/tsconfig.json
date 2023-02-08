@@ -3,7 +3,10 @@
     "lib": ["ES2015"],
     "module": "CommonJS",
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "strictPropertyInitialization": false,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
   },
   "exclude": ["node_modules"],
   "extends": "tsconfig/base.json",

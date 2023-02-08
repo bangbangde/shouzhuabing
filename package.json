@@ -2,9 +2,9 @@
   "name": "shouzhuabing",
   "version": "1.0.0",
   "description": "手抓饼点单",
-  "main": "index.js",
   "scripts": {
-    "deploy": "npm run deploy -ws --if-present"
+    "dev": "npm run dev -ws --if-present",
+    "build": "npm run build -ws --if-present"
   },
   "repository": {
     "type": "git",
@@ -18,11 +18,7 @@
   },
   "homepage": "https://github.com/bangbangde/shouzhuabing#readme",
   "workspaces": [
-    "packages/*",
+    "apps/*",
     "packages/*"
-  ],
-  "devDependencies": {
-    "eslint-config-custom": "*",
-    "prettier": "latest"
-  }
+  ]
 }
