@@ -17,6 +17,7 @@ jobs:
       uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAMER }}
         key: ${{ secrets.KEY }}
         source: "apps/api/dist,apps/web/dist"
         target: "shouzhuabing"
