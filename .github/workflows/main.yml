@@ -32,5 +32,5 @@ jobs:
         host: ${{ secrets.HOST }}
         username: ${{ secrets.USERNAMER }}
         key: ${{ secrets.KEY }}
-        source: "apps/api"
+        source: "apps/api/dist apps/api/package.json"
         target: ${{ secrets.API_TARGET }}
