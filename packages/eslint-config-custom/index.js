@@ -1,13 +1,19 @@
 module.exports = {
-  extends: ["next", "turbo", "prettier"],
-  settings: {
-    react: {
-      version: "detect",
-    },
+  extends: ["eslint:recommended"],
+  env: {
+    node: true,
+    es6: true,
   },
   parserOptions: {
-    babelOptions: {
-      presets: [require.resolve("next/babel")],
-    },
+    ecmaVersion: "latest",
+    sourceType: "module",
   },
+  overrides: [
+    {
+      files: ["**/__tests__/**/*"],
+      env: {
+        jest: true,
+      },
+    },
+  ],
 };

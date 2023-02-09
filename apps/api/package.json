@@ -29,14 +29,15 @@
     "typeorm": "^0.3.11"
   },
   "devDependencies": {
-    "eslint-config-custom-server": "*",
-    "tsconfig": "*",
     "@types/koa": "^2.13.5",
     "@types/koa__router": "^12.0.0",
     "@types/koa-session": "^5.10.6",
     "@types/node": "^18.11.18",
+    "cross-env": "^7.0.3",
+    "eslint-config-custom-server": "*",
     "nodemon": "^2.0.20",
     "reflect-metadata": "^0.1.13",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "tsconfig": "*"
   }
 }
