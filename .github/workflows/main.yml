@@ -25,6 +25,7 @@ jobs:
         key: ${{ secrets.KEY }}
         source: "apps/web/dist"
         target: ${{ secrets.WEB_TARGET }}
+        strip_components: 3
 
     - name: copy file via ssh password
       uses: appleboy/scp-action@master
@@ -34,3 +35,4 @@ jobs:
         key: ${{ secrets.KEY }}
         source: "apps/api/dist,apps/api/package.json"
         target: ${{ secrets.API_TARGET }}
+        strip_components: 2
