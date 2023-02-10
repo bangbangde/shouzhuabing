@@ -20,7 +20,7 @@ const fetchOption = {
 function fetchData() {
   data.loading = true;
   window
-    .fetch("http://localhost:3000/queryUserById", fetchOption)
+    .fetch("http://localhost:3000/queryUserById", fetchOption as any)
     .then((res) => res.json())
     .then((res) => {
       data.res = `Hi! ${res.nickname || ""}. 🎉🎉🎉 welcome 👏👏👏`;
