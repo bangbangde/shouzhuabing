@@ -30,7 +30,7 @@ post('changeOrderStatus', '/changeOrderStatus', async (ctx, next) => {
     ctx.status = 500;
     ctx.body = '改订单已完成,无需重复完成';
   } else {
-    await orderRepo.updateById(id, {status: 5});
+    await orderRepo.updateById(orderId, {status: 5});
     ctx.status = 200;
     ctx.body = {
       data: '订单完成'
