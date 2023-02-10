@@ -1,6 +1,34 @@
 <script setup lang="ts">
+import { reactive } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "./components/HelloWorld.vue";
+
+const data: { res: null | string; loading: boolean } = reactive({
+  res: null,
+  loading: false,
+});
+
+const fetchOption = {
+  method: "POST",
+  mode: "cors",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({ id: 1 }),
+};
+
+function fetchData() {
+  data.loading = true;
+  window
+    .fetch("http://localhost:3000/queryUserById", fetchOption)
+    .then((res) => res.json())
+    .then((res) => {
+      data.res = `Hi! ${res.nickname || ""}. 🎉🎉🎉 welcome 👏👏👏`;
+    })
+    .finally(() => {
+      data.loading = false;
+    });
+}
 </script>
 
 <template>
@@ -15,11 +43,14 @@ import HelloWorld from "./components/HelloWorld.vue";
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
+      <div>
+        <button :disabled="data.loading" @click="fetchData">Click Me</button>
+        <p>{{ data.res }}</p>
+      </div>
     </div>
   </header>
 

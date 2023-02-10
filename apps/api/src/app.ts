@@ -6,12 +6,19 @@ import { AppDataSource } from "./data-source"
 
 const app = new Koa();
 
-// x-response-time
+// common
 app.use(async (ctx, next) => {
+  const {method} = ctx;
+  if(method === 'OPTIONS') {
+    ctx.set('Access-Control-Allow-Origin', '*');
+    ctx.set('Access-Control-Allow-Headers', '*');
+    return ctx.status = 200;
+  } 
   const start = Date.now();
   await next();
   const ms = Date.now() - start;
   ctx.set('X-Response-Time', `${ms}ms`);
+  ctx.set('Access-Control-Allow-Origin', `*`);
 });
 
 app.use(session(app));

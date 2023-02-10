@@ -28,7 +28,7 @@ export const AppDataSource = new DataSource({
     username: MYSQL_USERNAME,
     password: MYSQL_PASSWORD,
     database: MYSQL_DATABASE,
-    synchronize: true,
+    synchronize: false,
     logging: false,
     entities: [User, Shop, Product, Trimming, ProductToTrimming, Flavor, Condiment, FlavorToCondiment, Order, CustomProduct],
     migrations: [],
