@@ -2,6 +2,7 @@
 import Koa from "koa";
 import router, { get } from "./common";
 import "./user";
+import "./order";
 get('ping', '/ping', async (ctx, next) => {
   ctx.body = `ping success: ${new Date().toLocaleTimeString()}`
   await next();

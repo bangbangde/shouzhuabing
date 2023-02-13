@@ -13,7 +13,7 @@ app.use(async (ctx, next) => {
     ctx.set('Access-Control-Allow-Origin', '*');
     ctx.set('Access-Control-Allow-Headers', '*');
     return ctx.status = 200;
-  } 
+  }
   const start = Date.now();
   await next();
   const ms = Date.now() - start;
